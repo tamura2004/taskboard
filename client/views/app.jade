@@ -1,0 +1,31 @@
+!!! 5
+html(lang="jp")
+	head
+		//- :coffeescript
+		//- 	Object.keys = Object.keys or (o) ->
+		//- 		result = []
+		//- 		for name in o
+		//- 			if o.hasOwnProperty name
+		//- 				result.push name
+		//- 		result
+
+		meta(charset="utf-8")
+		!= SocketStream
+		title Welcome
+	body
+		include hline
+		include vline
+
+		ul
+			li.menu
+			li.upload 一括登録
+			li.trash ゴミ箱
+			li.main
+
+		ul.notes
+		
+		include colorchip
+
+		#dialog(title="付箋一括作成")
+			form
+				textarea(name="list",id="list")

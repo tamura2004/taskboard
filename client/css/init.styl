@@ -1,0 +1,109 @@
+// 初期配置部品
+body
+  width 1024px
+  height 720px
+
+// リスト項目を自由配置部品として使用する
+li
+  position absolute
+
+// 左のメイン領域
+.main
+  width 900px
+  height 600px
+
+// 右端のメニューツール領域
+.menu
+  left 912px
+  width 100px
+  height 600px
+
+// 一括登録ボタン
+.upload
+  left 924px
+  top 450px
+  width 72px
+  height 40px
+  padding-top 12px
+  text-align center
+
+// 一括登録ボタン
+.upload:hover
+  background-color yellow
+
+// ダイアログ
+.ui-dialog
+  background-color gray + 90%
+  border solid 2px gray - 70%
+
+.ui-dialog-titlebar
+  background-color gray + 70%
+  border-bottom 1px gray - 70%
+  text-align center
+
+.ui-dialog-titlebar .ui-button
+  visibility hidden
+
+.ui-dialog textarea
+  border solid 1px gray - 80%
+  margin 3%
+  width 92%
+  height 300px
+
+// 右下のゴミ箱
+.trash
+  left 924px
+  top 520px
+  width 72px
+  height 60px
+  padding-top 12px
+  text-align center
+
+.trash-active
+  background-color yellow
+
+// 文字項目
+.title
+  padding 10px
+  font-size 32px
+  color gray
+
+// 縦横線
+.vline, .hline, .menu, .trash, .upload
+  border dashed 2px lightgray
+
+.vline
+  width 0px
+  height 600px
+
+.hline
+  width 900px
+  height 0px
+
+for x,i in 120 500 640
+  .vline:nth-child({i+1}), .progress:nth-child({i+1})
+    left x px
+
+for i in 1..7
+  .hline:nth-child({i}), .member:nth-child({i})
+    top i * 90px - 30px
+
+// カラーチップ
+.colorchip
+  width 36px
+  height 12px
+  left 924px
+  border solid 1px gray
+  font-size 8px
+  text-overflow clip
+
+colors = fuchsia red yellow lime aqua blue
+
+for color,i in colors
+
+  .colorchip:nth-child(6n+{i})
+    top i * 35px + 10px
+
+  .color{i+1}
+    background-color color + 70%
+    border-top solid 4px color - 30%
